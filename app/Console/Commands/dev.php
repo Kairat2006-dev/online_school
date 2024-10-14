@@ -26,5 +26,6 @@ class dev extends Command
     public function handle()
     {
 
+        dd(auth()->id());
     }
 }

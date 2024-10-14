@@ -43,5 +43,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require_once __DIR__ . '/admin/admin.php';
-
+Route::get('/profile/create', \App\Livewire\CreateProfile::class);
 require __DIR__.'/auth.php';
