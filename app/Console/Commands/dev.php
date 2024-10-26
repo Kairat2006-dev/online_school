@@ -2,7 +2,13 @@
 
 namespace App\Console\Commands;
 
+use App\Http\Controllers\WordFileController;
+use App\Models\Cource;
+use App\Models\Profile;
+use App\Models\SoderCource;
+use App\Models\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 
 class dev extends Command
 {
@@ -25,7 +31,17 @@ class dev extends Command
      */
     public function handle()
     {
+//        ->getStateUsing(
+//        function ($file) {
+//            if($file->avatar && $file){
+//                return Storage::disk('public')->url('avatars/' . $file->avatar);
+//            }
+//        }
+//    )
 
-        dd(auth()->id());
+        $profile = Profile::find(7);
+        $s = Storage::disk('public')->url('avatars/' . $profile->avatar);
+        dd($s);
+
     }
 }

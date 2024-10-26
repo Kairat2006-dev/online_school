@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasAvatar;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Profile extends Model
 {
@@ -13,4 +17,10 @@ class Profile extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function cource(){
+        return $this->hasMany(Cource::class);
+    }
+
+
+
 }
